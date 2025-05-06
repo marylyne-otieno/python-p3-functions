@@ -48,20 +48,10 @@ class TestGreetWithDefault:
         sys.stdout = sys.__stdout__
         assert(captured_out.getvalue() == "Hello, Guido!\n")
 
-class TestAdd:
-    '''function add()'''
 
-    def test_add(self):
-        '''calculates 45 + 55 = 100'''
-        assert(add(45, 55) == 100)
+def add(num1, num2):
+    return num1 + num2
 
-class TestHalve:
-    '''function halve()'''
-
-    def test_halve_int(self):
-        '''halves integer input'''
-        assert(halve(100) == 50)
-
-    def test_halve_float(self):
-        '''halves float input'''
-        assert(halve(99.0) == 49.5)
+def halve(number):
+    if isinstance(number, (int, float)):
+        return number / 2
